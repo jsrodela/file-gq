@@ -1,0 +1,18 @@
+{% extends 'fileapp/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1><a id="logo" href="/">File.gq</a></h1>
+  
+  <div class="little_title">
+    <p>Send</p>
+  </div>
+  
+  <div class="sendmanager">
+      <div class="file_select_rac"></div>
+      <input type="file" id="sendoutput">
+      <a href="send_result.html">
+          <div class="send_to_cloud"></div>
+      </a>
+  </div>
+{% endblock %}

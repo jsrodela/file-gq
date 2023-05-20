@@ -1,0 +1,23 @@
+{% extends 'fileapp/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1><a id="logo" href="/">File.gq</a></h1>
+  
+  <div class="explain">
+  <p>파일 공유와 전송을 보다 간단하게</p>
+  </div>
+
+  <div class="button">
+      <p>Send</p>
+      <p>Receive</p>
+  </div>
+
+  <a href="/receive">
+  <div class="Receive_button"></div>
+  </a>
+
+  <a href="/send">
+  <div class="Send_button"></div>
+  </a>
+{% endblock %}
