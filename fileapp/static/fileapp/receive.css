@@ -1,0 +1,62 @@
+p {
+    text-align: center;
+    margin: 0
+}
+
+.receievemanager,
+.receieve_to_PC,
+.code_input_rac {
+    position: relative;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0)fff;
+    border: var(--box-border) solid black;
+
+}
+
+.little_title {
+    font-family: var(--Eng-fonts);
+    text-decoration: none;
+    font-size: 30pt;
+    margin-top: -30px;
+}
+
+.code_input_rac {
+    top: calc(1/2*var(--wide-box-height));
+    left: calc(
+        1/2*var(--inputrac-width) + 
+        5/2* var(--box-border)
+    );
+    width: var(--inputrac-width);
+    height: var(--inputrac-height);
+    border-radius: 20px 5px 5px 20px;
+}
+
+.receieve_to_PC {
+    top: calc(
+        1/2*var(--wide-box-height) + 
+        -1 * var(--inputrac-height) + 
+        -2*var(--box-border)
+    );
+    left: calc(
+        var(--inputrac-width) + 
+        var(--short-button-width)/2 + 
+        11/2*var(--box-border)
+    );
+    width: var(--short-button-width);
+    height: var(--inputrac-height);
+    border-radius: 5px 20px 20px 5px;
+    background-color: var(--color2);
+}
+
+.receieve_to_PC:hover{
+    background-color: var(--color2-act);
+}
+
+.receievemanager {
+    top: var(--control-box-top);
+    left: calc(0.5*var(--wide-box-width));
+    width: var(--wide-box-width);
+    height: var(--wide-box-height);
+    border-radius: 25px 25px 25px 25px;
+    margin-top: 240px;
+}

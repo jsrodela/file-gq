@@ -1,30 +1,50 @@
-# Python on Replit
+# file-gq
+파일 공유와 전송을 보다 간단하게
 
-This is a template to get you started with Python on Replit. It's ready to go so you can just hit run and start coding!
+## 사용법
+1. 왼쪽 파일 목록에서 파일을 선택하고, 코드를 작성한다.
+2. 위쪽의 Run 버튼을 눌러 서버를 실행하고, 아래 주소로 들어간다. https://daon-kiosk--rodela6.repl.co (replit의 webview로 보는 것보다 다른 탭에서 링크로 들어가서 보는걸 추천)
+3. 새로고침과 코드 수정을 반복한다. 화이팅! (F5로 적용 안되면 Ctrl+F5 눌러보기)
+4. 수정한 내용을 아래 '수정 기록'에 남겨두기
 
-## Running the repl
+여러분이 이 프로젝트의 주인입니다! 아이디어가 있다면 거리낌 없이 수정해주세요. 특정 기능을 넣고 싶은데 잘 안되면 언제든지 물어보세요 - 함께하기 위해 우리가 로델라에 있는 겁니다!
 
-1. Setup a new secret environment variable (the lock icon) where the key is `SECRET_KEY` and the value is
-   a randomly generated token of 32 bits of randomnese. To generate such a token type this into the shell and hit Enter:
-```
-python
-import secrets
-secrets.token_urlsafe(32)
-```
-2. Hit run!
+## 파일 구조
+- fileapp : 파일 공유와 관련된 모든 것들 
+- main : 최상위 프로젝트
 
-See this 1 minute video for a walkthrough: [https://www.loom.com/share/ecc4e738149f4d1db3bcff01758b3e71](https://www.loom.com/share/341b5574d12040fb9fcbbff150777f1c)
+  - urls.py : 특정 주소로 들어왔을 때 실행할 함수 설정
+  - views.py : 사용자의 요청을 처리하여 HTML 파일을 반환하는 함수
+  - templates / HTML.html : views.py에서 반환될 HTML 파일
+  - static / 파일 : HTML에서 불러올 CSS & JavaScript 코드, 혹은 이미지 파일 등
 
-## Installing packages
+## 링크 구조
+- `/` : 메인 페이지
+- `/send` : 보내기
+- `/send_result` : 보내기 결과, 보낸 후 QR코드랑 숫자 표시하는 페이지
+- `/receive` : 받기
 
-To add packages to your repl, you can just import directly in the file you want to use the package in, and it will automatically be installed when you press the run button. Like below:
-```python
-import math
-import pandas as pd
-```
+## 수정 기록
 
-You could also install packages by using the Replit packager interface in the left sidebar.
+5/14
+- 메인, 보내기, 결과, 받기 페이지 추가 / 강이규
 
-## Help
+5/28
+- CSS 분리 / 강이규
+- CSS 변수화, 버튼 호버기능 추가 / 강이규
 
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Feel free to report bugs and give us feedback [here](https://replit.com/support).
+5/31
+- 디버그 / 강이규
+- 버튼 텍스트, 사각형 병합 / 강이규
+- 배경 도형 추가, 색상 변수화 / 강이규
+- 프론트엔드팀에서 상의한 것과 같이 디자인 변경 / rkddlrb
+- 
+6/1
+- 배경 색상 더 진하게 변경 / 김정윤
+- send페이지 form 추가, urlpatterns name 추가, models 추가 / 박도현
+
+6/2
+- send에서 파일 업로드 버튼 위치 수정/홍채이
+
+6/3
+- views.send() 내용 임시, send페이지 form 수정

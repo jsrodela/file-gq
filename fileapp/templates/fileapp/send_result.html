@@ -1,14 +1,41 @@
-{% extends 'fileapp/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
 
-{% block content %}
-  <h1><a id="logo" href="/">File.gq</a></h1>
-  
-  <div class="little_title">
-    <p>Send</p>
-  </div>
-  
-  <div class="send_result_rec">
-      <b><p id = share_code>공유코드 : 123456</p></b>
-  </div>
-{% endblock %}
+<head>
+    <link rel="stylesheet" href="static/fileapp/commonvalue.css">
+    <link rel="stylesheet" href="static/fileapp/send_result.css">
+    <script src="static/fileapp/common.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+    <style>
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="description" content="File.gq - 파일 공유 및 전송 서비스">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header style="padding: 0;">
+        <main>
+            <h1 class="animate"><a id="logo" href="/">File.gq</a></h1>
+          <div  class="animate">
+            <div class="little_title">
+            <p>Send</p>
+            </div>
+
+            <div class="send_result_rec">
+                <b><p id = share_code>공유코드 : 123456</p></b>
+            </div>
+          </div>
+          <div class="bg-tri1"></div>
+            <div class="bg-tri2"></div>
+            <div class="bg-rac"></div>
+        </main>
+    </header>
+</body>
+
+</html>

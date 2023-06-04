@@ -1,0 +1,58 @@
+p {
+    text-align: center;
+    margin: 0
+}
+
+.explain {
+    font-family: var(--Kor-fonts);
+    font-size: 15pt;
+    margin-top: 0px;
+    margin-bottom: 240px;
+}
+
+.Receive_button,
+.Send_button{
+    position: relative;
+    left: calc(var(--button-width));
+    width: var(--button-width);
+    height: var(--button-height);
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0)fff;
+    border: var(--box-border) solid var(--color2);
+    text-align: center;
+    font-family: var(--Eng-fonts);
+    font-size: 30pt;
+    color: var(--color1);
+    background-color: var(--color2);
+}
+    .Send_button {
+        top: calc(
+            -1.5 * var(--button-height) + 
+            -3 * var(--box-border) + 
+            var(--control-box-top) +
+            50px
+        );
+        border-radius: 25px 25px 10px 10px;
+    }
+
+    .Receive_button {
+        top: calc(
+            -1.5 * var(--button-height) + 
+            -2 * var(--box-border) + 
+            var(--control-box-top) + 
+            50px
+        );
+        border-radius: 10px 10px 25px 25px;
+    }
+
+    .Receive_button:hover,
+    .Send_button:hover {
+        background-color: var(--color2-act);
+        border: var(--box-border) solid var(--color2-act);
+    }
+
+.noblue{
+    text-decoration: none;
+    color: inherit;
+}
+

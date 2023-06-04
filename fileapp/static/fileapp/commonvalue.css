@@ -1,0 +1,124 @@
+/* 변수 */
+:root {
+    --button-width: 200px;
+    --button-height: 60px;
+    --box-border: 3px;
+    --wide-box-width: 450px;
+    --wide-box-height: calc(
+        4*var(--box-border) + 
+        2 * var(--button-height)
+    );
+    --inputrac-width: calc(
+        var(--wide-box-width)*3/4 + 
+        -4 * var(--box-border)
+        );
+    --inputrac-height: calc(2/5*var(--wide-box-height));
+    --short-button-width: calc(
+        var(--wide-box-width)/4 + 
+        -4* var(--box-border)
+    );
+    --control-box-top: 100px;
+    --Eng-fonts: Abril Fatface;
+    --Kor-fonts: Nanum Myeongjo;
+    --logo-fonts-size: 100pt;
+    --color1: rgb(255, 255, 255); /*배경 밑 제목 */
+    --color2: #474747; /*버튼, 버튼 활성화 */
+    --color2-act: #333333;
+    --color3: #969696;
+}
+/*공통 스타일*/
+body {
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
+    overflow: hidden;
+    background-color: var(--color1);
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    text-align: center;
+}
+
+/*메인로고*/
+a#logo {
+    font-family: var(--Eng-fonts);
+    font-size: var(--logo-fonts-size);
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+}
+/*보라색 방지*/
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+/*애니메이션 효과*/
+@keyframes slideIn {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.animate {
+    animation: slideIn 0.5s ease-out forwards;
+}
+ 
+/*소제목 색*/
+.explain,
+.little_title{
+    color: var(--color1);
+}
+/*배경요소*/
+.bg-tri1{
+    top: 5vh;
+    position: absolute;
+    border-right: 300vh solid transparent;
+    border-top: 100vh solid var(--color2);
+    z-index: -1;
+}
+
+.bg-tri2{
+    top: 15vh;
+    position: absolute;
+    border-right: 300vh solid transparent;
+    border-top: 100vh solid var(--color3);
+    z-index: -2;
+}
+
+.bg-rac{
+    width: 100%;
+    height: 100px;
+    top: 0px;
+    background-color: var(--color2);
+    position: absolute;
+    z-index: -1;
+}

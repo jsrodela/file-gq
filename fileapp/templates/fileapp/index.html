@@ -1,23 +1,52 @@
-{% extends 'fileapp/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
 
-{% block content %}
-  <h1><a id="logo" href="/">File.gq</a></h1>
-  
-  <div class="explain">
-  <p>파일 공유와 전송을 보다 간단하게</p>
-  </div>
+<head>
+    <link rel="stylesheet" href="static/fileapp/commonvalue.css">
+    <link rel="stylesheet" href="static/fileapp/index.css">
+    <script src="static/fileapp/common.js"></script>
 
-  <div class="button">
-      <p>Send</p>
-      <p>Receive</p>
-  </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 
-  <a href="/receive">
-  <div class="Receive_button"></div>
-  </a>
 
-  <a href="/send">
-  <div class="Send_button"></div>
-  </a>
-{% endblock %}
+    <style>
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="description" content="File.gq 파일 전송 서비스">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>File.gq</title>
+</head>
+
+<body>
+    <header style="padding: 0;">
+        <main>
+        <div class="animate">
+            <h1><a id="logo" href="/">File.gq</a></h1>
+
+            <div class="explain">
+            <p>파일 공유와 전송을 보다 간단하게</p>
+            </div>
+
+            <a class="noblue" href="/send">
+                <div class="Send_button">Send</div>
+            </a>
+
+            <a class="noblue" href="/receive">
+              <div class="Receive_button">Receive</div>
+            </a>
+        </div>
+
+            <div class="bg-tri1"></div>
+            <div class="bg-tri2"></div>
+            <div class="bg-rac"></div>
+        </main>
+    </header>
+</body>
+
+</html>
+
+</html>
