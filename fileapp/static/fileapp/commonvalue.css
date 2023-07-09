@@ -1,36 +1,23 @@
 /* 변수 */
 :root {
-    --button-width: 200px;
-    --button-height: 60px;
-    --box-border: 3px;
-    --wide-box-width: 450px;
-    --wide-box-height: calc(
-        4*var(--box-border) + 
-        2 * var(--button-height)
-    );
-    --inputrac-width: calc(
-        var(--wide-box-width)*3/4 + 
-        -4 * var(--box-border)
-        );
-    --inputrac-height: calc(2/5*var(--wide-box-height));
-    --short-button-width: calc(
-        var(--wide-box-width)/4 + 
-        -4* var(--box-border)
-    );
-    --control-box-top: 100px;
-    --Eng-fonts: Abril Fatface;
-    --Kor-fonts: Nanum Myeongjo;
-    --logo-fonts-size: 100pt;
+    --Eng-fonts: Noto Sans;
+    --Kor-fonts: Noto Sans KR;
     --color1: rgb(255, 255, 255); /*배경 밑 제목 */
     --color2: #474747; /*버튼, 버튼 활성화 */
-    --color2-act: #333333;
-    --color3: #969696;
+    --color2-act: #282828;
+    --color3: #747474;
+    --color4: #aaaaaa; /*박스 배경 */
+
+    /* --color1: black;
+    --color2: #f7e88a;
+    --color2-act: #edd663;
+    --color3: #f6f2a0;
+    --color4: transparent; */
 }
 /*공통 스타일*/
 body {
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Nanum Gothic', sans-serif;
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     overflow: hidden;
     background-color: var(--color1);
 }
@@ -47,6 +34,7 @@ main {
     padding: 0;
     text-decoration: none;
     color: inherit;
+    text-align: center;
 }
 
 form {
@@ -61,9 +49,9 @@ input {
 /*메인로고*/
 a#logo {
     font-family: var(--Eng-fonts);
-    font-size: var(--logo-fonts-size);
-    margin-top: 10px;
-    margin-bottom: 30px;
+    font-size: 94pt;
+    /* margin-top: 10px;
+    margin-bottom: 30px; */
     text-decoration: none;
     color: var(--color1);
     text-align: center;
@@ -87,16 +75,21 @@ a:active {
       opacity: 1;
     }
 }
-
+  
 .animate {
-    animation: slideIn 0.5s ease-out forwards;
+    animation: slideIn 0.5s ease-out;
 }
- 
-/*소제목 색*/
-.explain,
-.little_title{
+
+/*소제목*/
+
+.explain {
     color: var(--color1);
+    font-family: var(--Kor-fonts);
+    font-size: 20pt;
+    margin-top: 0px;
+    margin-bottom: 240px;
 }
+
 /*배경요소*/
 .bg-tri1{
     top: 5vh;
@@ -121,4 +114,29 @@ a:active {
     background-color: var(--color2);
     position: absolute;
     z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+    /* main {
+      margin-top: -15px;
+    } */
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+  
+    a#logo {
+      padding-top: 1rem;
+      font-size: 6rem;
+    }
+
+    /* .bg-tri1, .bg-tri2 {
+        border-right-width: 275vh;
+        border-top-width: 75vh;
+    } */
+
+    .explain {
+      font-size: 1.5rem;
+    }
+
 }

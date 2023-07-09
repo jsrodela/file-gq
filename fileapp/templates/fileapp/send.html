@@ -4,11 +4,12 @@
 <head>
     <link rel="stylesheet" href="static/fileapp/commonvalue.css">
     <link rel="stylesheet" href="static/fileapp/send.css">
-    <script src="static/fileapp/common.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Noto+Sans:wght@900&display=swap" rel="stylesheet">
+
+    <script src="static/fileapp/common.js"></script>
 
     <style>
     </style>
@@ -24,36 +25,27 @@
     <header style="padding: 0;">
         <main>
             <h1 class="animate"><a id="logo" href="/">File.gq</a></h1>
-          <div class="animate">
+            <div class="animate">
+                <div class="explain">
+                    <p>파일 보내기</p>
+                </div>
 
-            <div class="little_title">
-            <p>Send</p>
-            </div>
-
-            <div class="sendmanager">
-                <form action="{% url 'send' %}" method="POST" enctype="multipart/form-data">
-                    <div class="file_select_rac"></div>
-                    <input type="file" name="file" id="sendoutput">
-                    {% csrf_token %}
-                    <input type="submit" class="send_to_cloud" value="">
-                </form>
+                <div class="sendmanager">
+                    <form action="{% url 'send' %}" method="POST" enctype="multipart/form-data">
+                        <div class="file_select_rac"></div>
+                        <input type="file" name="file" id="sendoutput">
+                        {% csrf_token %}
+                        <input type="submit" class="send_to_cloud" value="GO">
+                    <label for="temporary" class="download-limit">내려받기 1회 제한</label>
+                    <input type="checkbox" id="temporary" name="temporary" class="custom-checkbox">
+                    </form>
+                </div>
             </div>
             
-            <!--
-            <div class="sendmanager">
-                <div class="file_select_rac"></div>
-                <input type="file" id="sendoutput">
-                <a href="/send_result">
-                    <div class="send_to_cloud"></div>
-                </a>
-            </div>
-            -->
-            
-          </div>
-          
-          <div class="bg-tri1"></div>
+            <div class="bg-tri1"></div>
             <div class="bg-tri2"></div>
             <div class="bg-rac"></div>
+            
         </main>
     </header>
 </body>

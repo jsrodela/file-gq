@@ -4,35 +4,38 @@
 <head>
     <link rel="stylesheet" href="static/fileapp/commonvalue.css">
     <link rel="stylesheet" href="static/fileapp/receive.css">
-    <script src="static/fileapp/common.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Noto+Sans:wght@900&display=swap" rel="stylesheet">
 
-    <style>
-    </style>
+    <script src="static/fileapp/common.js"></script>
 
     <meta charset="utf-8">
-    <meta name="description" content="File.gq - 파일 공유 및 전송 서비스">
+    <meta name="description" content="File.gq 파일 전송 서비스">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
 </head>
 
 <body>
     <header style="padding: 0;">
         <main>
             <h1 class="animate"><a id="logo" href="/">File.gq</a></h1>
-          <div  class="animate">
-            <div class="little_title">
-            <p>Receive</p>
+            <div class="animate">
+              <div class="explain">
+                <p>파일 받기</p>
+              </div>
+  
+              <div class="receievemanager">
+                <form action="{% url 'receive' %}" method="POST">
+                  <input type="number" name="code" id="codenum" placeholder="공유코드 입력" min="000000" max="999999">
+                  {% csrf_token %}
+                  <input type="submit" class="receieve_to_PC" value="GO">
+                </form>
+              </div>
             </div>
-
-            <div class="receievemanager"> 
-                <div class="code_input_rac"></div>
-                <div class="receieve_to_PC"></div>
-            </div>
-          </div>
-          <div class="bg-tri1"></div>
+            <div class="bg-tri1"></div>
             <div class="bg-tri2"></div>
             <div class="bg-rac"></div>
         </main>

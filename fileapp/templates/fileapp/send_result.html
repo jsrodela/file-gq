@@ -4,11 +4,12 @@
 <head>
     <link rel="stylesheet" href="static/fileapp/commonvalue.css">
     <link rel="stylesheet" href="static/fileapp/send_result.css">
-    <script src="static/fileapp/common.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Noto+Sans:wght@900&display=swap" rel="stylesheet">
+
+    <script src="static/fileapp/common.js"></script>
 
     <style>
     </style>
@@ -21,19 +22,20 @@
 <body>
     <header style="padding: 0;">
         <main>
-            <h1 class="animate"><a id="logo" href="/">File.gq</a></h1>
-          <div  class="animate">
-            <div class="little_title">
-            <p>Send</p>
+            <a id="logo" href="/">File.gq</a></h1>
+            <div class="explain">
+                <p>파일 송신</p>
             </div>
 
             <div class="send_result_rec">
-                <b><p id = share_code>공유코드 : 123456</p></b>
+                <img id="share_qr" src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=https://file.gq/receive?code={{code}}">
+                <b><p id="share_code">공유코드 : {{code}}</p></b>
             </div>
-          </div>
-          <div class="bg-tri1"></div>
+
+            <div class="bg-tri1"></div>
             <div class="bg-tri2"></div>
             <div class="bg-rac"></div>
+            
         </main>
     </header>
 </body>

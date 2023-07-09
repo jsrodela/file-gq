@@ -4,71 +4,98 @@ p {
 }
 
 .sendmanager,
-.send_to_cloud,
-.file_select_rac{
+.send_to_cloud{
     position: relative;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0)fff;
-    border: var(--box-border) solid black;
 }
 
-.little_title {
-    font-family: var(--Eng-fonts);
-    text-decoration: none;
-    font-size: 30pt;
-    margin-top: -30px;
-    margin-bottom: 0px;
-}
-
-.file_select_rac{
-    top: calc(1/2*var(--wide-box-height));
-    left: calc(
-        1/2 * var(--inputrac-width) + 
-        5/2 * var(--box-border)
-    );
-    width: var(--inputrac-width);
-    height: var(--inputrac-height);
-    border-radius: 20px 5px 5px 20px;
-}
 
 .send_to_cloud{
-    top: calc(-1 * var(--inputrac-height) + -1px);
-    left: calc(
-        var(--inputrac-width) + 
-        var(--short-button-width) / 2 + 
-        11/2*var(--box-border)
-    );
-    width: var(--short-button-width);
-    height: var(--inputrac-height);
-    border-radius: 5px 20px 20px 5px;
-    background-color: gray;
+    position: relative;
+    top: 10.5px;
+    left: 458px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px 10px 10px 5px;
+    border: none;
+    background-color: var(--color2);
+    font-size: 18pt;
+    color: white;
+    font-family: var(--Eng-fonts);
 }
 .send_to_cloud:hover{
-    background-color: rgb(90, 90, 90);
+    background-color: var(--color2-act);
 }
 
 .sendmanager{
-    top: var(--control-box-top);
-    left: calc(1/2 * var(--wide-box-width));
-    width: var(--wide-box-width);
-    height: var(--wide-box-height);
+    position: relative;
+    background-color: var(--color4);
+    top: 100px;
+    left: 250px;
+    width: 500px;
+    height: 120px;
     border-radius: 25px 25px 25px 25px;
     margin-top: 240px;
 }
 
+.custom-checkbox{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 35px;
+    left: 150px;
+}
+
+.download-limit{
+    position: relative;
+    color: white;
+    font-family: var(--Kor-fonts);
+    font-size: 13pt;
+    bottom: 10px;
+}
+
+/*.custom-checkbox:checked {
+    display: none;
+}*/
+
 #sendoutput {
-	color: rgb(0, 0, 0);
+	  color: rgb(0, 0, 0);
     position: relative;
     cursor: pointer;
-	border: none;
-    top: calc(
-        -1/2 * var(--inputrac-height) + 
-        var(--box-border)
-    );
-    left: 7px;
-    width: 280px;
-	padding: 10px;
-    font-size: 18px;
+	  border: none;
+    border-radius: 10px 5px 5px 10px;
+    top: 36px;
+    left: 17px;
+    width: 390px;
+    height: 30px;
+	  padding: 10px;
+    font-size: 15pt;
     font-family: var(--kor-fonts);
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .sendmanager {
+    width: 80%;
+    left: 50%;
+  }
+
+  #sendoutput {
+    width: 60%;
+    font-size: 1rem;
+  }
+
+  .send_to_cloud {
+    left:85%;
+  }
+
+  .download-limit {
+    /* width: fit-content; */
+    /* left: 30%: */
+  }
+
+  .custom-checkbox {
+    left: 15%;
+  }
 }
 
