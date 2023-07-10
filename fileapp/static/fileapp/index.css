@@ -3,8 +3,6 @@ p {
     margin: 0
 }
 
-
-
 .Receive_button,
 .Send_button{
     position: relative;
@@ -22,12 +20,13 @@ p {
     line-height: 55px;
 }
     .Send_button {
-        top: 51px;
+        /* top: 51px; */
         border-radius: 25px 25px 10px 10px;
     }
 
     .Receive_button {
-        top: 54px;
+        /* top: 54px; */
+        margin-top: 3px;
         border-radius: 10px 10px 25px 25px;
     }
 
@@ -46,4 +45,7 @@ p {
     align-items: center;
     width: 100%;
     transform: translate(0, -25%);
+    
+    top: 51px;
+    position: relative;
 }

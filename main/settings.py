@@ -29,8 +29,10 @@ if SECRET_KEY is None:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['file-gq-1.rodela6.repl.co', 'file.gq']
 X_FRAME_OPTIONS = '*'
+CSRF_TRUSTED_ORIGINS = ['https://file-gq-1.rodela6.repl.co',
+                       'http://file.gq', 'https://file.gq']
 
 # Application definition
 

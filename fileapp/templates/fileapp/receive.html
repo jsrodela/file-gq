@@ -28,18 +28,23 @@
               </div>
   
               <div class="receievemanager">
-                <form action="{% url 'receive' %}" method="POST">
+                <form id="form" action="{% url 'receive' %}" method="POST">
                   <input type="number" name="code" id="codenum" placeholder="공유코드 입력" min="000000" max="999999">
                   {% csrf_token %}
                   <input type="submit" class="receieve_to_PC" value="GO">
                 </form>
               </div>
             </div>
+        </main>
+        <div class="bg">
             <div class="bg-tri1"></div>
             <div class="bg-tri2"></div>
             <div class="bg-rac"></div>
-        </main>
+        </div>
     </header>
+    <script>
+      // document.getElementById("form").action = "{% url 'receive' %}?color=" + color;
+    </script>
 </body>
 
 </html>

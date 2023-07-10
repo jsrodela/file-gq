@@ -1,24 +1,48 @@
 /* 변수 */
-:root {
+html {
     --Eng-fonts: Noto Sans;
     --Kor-fonts: Noto Sans KR;
-    --color1: rgb(255, 255, 255); /*배경 밑 제목 */
-    --color2: #474747; /*버튼, 버튼 활성화 */
-    --color2-act: #282828;
-    --color3: #747474;
-    --color4: #aaaaaa; /*박스 배경 */
 
-    /* --color1: black;
-    --color2: #f7e88a;
-    --color2-act: #edd663;
-    --color3: #f6f2a0;
-    --color4: transparent; */
+    --color1: var(--black-color1); /* 배경 밑 제목 */
+    --color2: var(--black-color2); /* 버튼, 버튼 활성화 */
+    --color2-act: var(--black-color2-act);
+    --color3: var(--black-color3);
+    --color4: var(--black-color4); /* 박스 배경 */
+
+    --black-color1: rgb(255,255,255);
+    --black-color2: #474747;
+    --black-color2-act: #282828;
+    --black-color3: #747474;
+    --black-color4: #aaaaaa;
+
+    --red-color1: white;
+    --red-color2: #d76b74;
+    --red-color2-act: #ad4951;
+    --red-color3: #f2b1c0;
+    --red-color4: #ff91ab;
+
+    --blue-color1: white;
+    --blue-color2: #6bc9d7;
+    --blue-color2-act: #5199a3;
+    --blue-color3: #c6e3ee;
+    --blue-color4: #d4e7ff;
+
+    --yellow-color1: black;
+    --yellow-color2: #f7e88a;
+    --yellow-color2-act: #edd663;
+    --yellow-color3: #f6f2a0;
+    --yellow-color4: transparent;
+
+    --green-color1: white;
+    --green-color2: #6adea4;
+    --green-color2-act: #56b858;
+    --green-color3: #9df5c9;
+    --green-color4: #c1e8d5;
 }
 /*공통 스타일*/
 body {
     font-family: 'Noto Sans', sans-serif;
     font-family: 'Noto Sans KR', sans-serif;
-    overflow: hidden;
     background-color: var(--color1);
 }
 
@@ -35,6 +59,14 @@ main {
     text-decoration: none;
     color: inherit;
     text-align: center;
+}
+
+.bg {
+  z-index: -1;
+  position: fixed;
+  top: -25vh;
+  left: 0;
+  height: 100vh;
 }
 
 form {

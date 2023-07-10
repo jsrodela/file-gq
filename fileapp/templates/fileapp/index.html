@@ -14,13 +14,21 @@
     <meta charset="utf-8">
     <meta name="description" content="File.gq 파일 전송 서비스">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0-->
+
+    <!-- 카톡 미리보기 정보 -->
+    <meta property="og:url" content="https://file.gq">
+    <meta property="og:title" content="File.gq">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="공유시 보여질 이미지 경로"> -->
+    <meta property="og:description" content="파일 공유와 전송을 보다 간단하게">
 
     <title></title>
 </head>
 
 <body>
     <header style="padding: 0;">
-        <main>
+      <main>
         <div class="animate">
             <h1><a id="logo" href="/">File.gq</a></h1>
 
@@ -29,21 +37,27 @@
             </div>
 
             <div class="buttons">
-                <a class="noblue" href="/send">
+                <a id="send" class="noblue" href="/send">
                     <div class="Send_button">파일 보내기</div>
                 </a>
     
-                <a class="noblue" href="/receive">
+                <a id="receive" class="noblue" href="/receive">
                     <div class="Receive_button">파일 받기</div>
                 </a>
             </div>
         </div>
-
+        <div class="bg">
             <div class="bg-tri1"></div>
             <div class="bg-tri2"></div>
             <div class="bg-rac"></div>
-        </main>
+        </div>
+      </main>
+      
     </header>
+  <script>
+    document.getElementById("send").href = "/send?color=" + color;
+    document.getElementById("receive").href = "/receive?color=" + color;
+  </script>
 </body>
 
 </html>
