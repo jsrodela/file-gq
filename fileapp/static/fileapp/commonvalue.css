@@ -188,10 +188,10 @@ a:active {
       font-size: 4rem;
     }
 
-    /* .bg-tri1, .bg-tri2 {
-        border-right-width: 275vh;
-        border-top-width: 75vh;
-    } */
+    .bg-tri1, .bg-tri2 {
+        border-right-width: 280vh;
+        border-top-width: 80vh;
+    }
 
     .explain {
       font-size: 1.5rem;
