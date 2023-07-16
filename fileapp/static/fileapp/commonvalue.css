@@ -38,6 +38,12 @@ html {
     --green-color2-act: #56b858;
     --green-color3: #9df5c9;
     --green-color4: #c1e8d5;
+
+    --purple-color1: white;
+    --purple-color2: #ca7cfe;
+    --purple-color2-act: #af23fb;
+    --purple-color3: #d453ee;
+    --purple-color4: #dd80ff;
 }
 /*공통 스타일*/
 body {
