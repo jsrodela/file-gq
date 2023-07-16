@@ -2,6 +2,8 @@
 html {
     --Eng-fonts: Noto Sans;
     --Kor-fonts: Noto Sans KR;
+    --logo-fonts: 'Giants-Inline';
+    --explain-fonts: 'KCC-eunyoung';
 
     --color1: var(--black-color1); /* 배경 밑 제목 */
     --color2: var(--black-color2); /* 버튼, 버튼 활성화 */
@@ -21,11 +23,11 @@ html {
     --red-color3: #f2b1c0;
     --red-color4: #ff91ab;
 
-    --blue-color1: white;
-    --blue-color2: #6bc9d7;
-    --blue-color2-act: #5199a3;
-    --blue-color3: #c6e3ee;
-    --blue-color4: #d4e7ff;
+    --skyblue-color1: white;
+    --skyblue-color2: #6bc9d7;
+    --skyblue-color2-act: #5199a3;
+    --skyblue-color3: #c6e3ee;
+    --skyblue-color4: #d4e7ff;
 
     --yellow-color1: black;
     --yellow-color2: #f7e88a;
@@ -44,6 +46,12 @@ html {
     --purple-color2-act: #af23fb;
     --purple-color3: #d453ee;
     --purple-color4: #dd80ff;
+
+    --blue-color1: white;
+    --blue-color2: #7b69e0;
+    --blue-color2-act: #604ccf;
+    --blue-color3: #a79aed;
+    --blue-color4: #c9c2f2;
 }
 /*공통 스타일*/
 body {
@@ -86,8 +94,10 @@ input {
 
 /*메인로고*/
 a#logo {
-    font-family: var(--Eng-fonts);
-    font-size: 94pt;
+    /* font-family: var(--Eng-fonts); */
+    font-family: var(--logo-fonts);
+    /* font-size: 94pt; */
+    font-size: 7rem;
     /* margin-top: 10px;
     margin-bottom: 30px; */
     text-decoration: none;
@@ -122,11 +132,21 @@ a:active {
 
 .explain {
     color: var(--color1);
-    font-family: var(--Kor-fonts);
+    /* font-family: var(--Kor-fonts); */
+    font-weight: bold;
     font-size: 20pt;
     margin-top: 0px;
     margin-bottom: 240px;
 }
+  .explain1 {
+    font-size: 40pt;
+    font-family: var(--explain-fonts);
+  }
+  .explain2 {
+    font-size: 20pt;
+    font-weight: normal;
+    font-family: var(--explain-fonts);
+  }
 
 /*배경요소*/
 .bg-tri1{
@@ -165,7 +185,7 @@ a:active {
   
     a#logo {
       padding-top: 1rem;
-      font-size: 6rem;
+      font-size: 4rem;
     }
 
     /* .bg-tri1, .bg-tri2 {
@@ -175,6 +195,26 @@ a:active {
 
     .explain {
       font-size: 1.5rem;
+      margin-bottom: 30vh;
     }
 
+    .explain1 {
+      font-size: 2.5rem;
+    }
+    
+
+}
+
+@font-face {
+    font-family: 'Giants-Inline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Inline.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KCC-eunyoung';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

@@ -1,6 +1,6 @@
 window.history.scrollRestoration = 'manual'
 
-const colors = ['red', 'blue', 'yellow', 'black', 'purple', 'green']
+const colors = ['red', 'skyblue', 'yellow', 'black', 'green', 'purple', 'blue']
 const searchParams = new URLSearchParams(location.search);
 let color;
 
