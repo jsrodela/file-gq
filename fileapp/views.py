@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 import random
-
+import json
 from . import models
 
 
@@ -56,3 +58,24 @@ def genCode():
     while models.Upload.objects.filter(code=code).exists():
         code = (code + 1) % 1000000
     return code
+
+
+@csrf_exempt
+def api(request):
+    if request.method == "POST":
+          code = genCode()
+          file = request.FILES["file"]
+  
+          upload = models.Upload(code=code, )
+          upload.save()  # Upload 모델
+  
+          fileupload = models.FileUpload(upload_id=upload, file=file)
+          fileupload.save()
+          
+          return HttpResponse(json.dumps({
+              'status': 'success',
+              'code': code
+          }))
+
+    return redirect('/')
+

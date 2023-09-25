@@ -6,4 +6,5 @@ urlpatterns = [
     path('send', views.send, name="send"),
     path('receive', views.receive, name='receive'),
     path('send_result', views.send_result, name='send_result'),
+    path('api', views.api, name='api'),
 ]
