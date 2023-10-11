@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 import random
 import json
+import os
 from django.core.files.storage import FileSystemStorage
 from django.http import FileResponse
 from urllib import parse
@@ -42,17 +43,20 @@ def receive(request):
             if upload is None:
                 return render(request, 'fileapp/receive.html', {'error': ''})
 
-            # file = models.FileUpload.objects.filter(upload_id=upload).first()
-            # if file is None:
-            #     return render(request, 'fileapp/receive.html', {'error': ''})
-    
-            response = get_file_response(upload)
-            if response is None:
+            file = models.FileUpload.objects.filter(upload_id=upload).first()
+            if file is None:
                 return render(request, 'fileapp/receive.html', {'error': ''})
+    
+            # response = get_file_response(upload)
+            # if response is None:
+            #     return render(request, 'fileapp/receive.html', {'error': ''})
 
-            return response
-            
-            # return redirect(file.file.url)
+            # return response
+
+            print(file.file.url)
+            return redirect(file.file.url)
+        else:
+          return render(request, 'fileapp/receive.html', {'error': ''})
     else:
         # code = request.GET.get('code', None)
         return render(request, 'fileapp/receive.html', {})
@@ -68,6 +72,14 @@ def get_file_response(upload):
 
   response = FileResponse(fs.open(file_path, 'rb'), content_type='multipart/form-data;')
   response['Content-Disposition'] = 'attachment; filename*=UTF-8\'\'%s' % parse.quote(file_name)
+
+  # with open(file_path, 'rb') as fh:
+  #   response = HttpResponse(fh.read(), content_type="application/force-download")
+  #   response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
+  # return response
+
+  # response = HttpResponse(fs.open(file_path, 'rb').read(), content_type="application/force-download")
+  # response['Content-Disposition'] = 'attachment; filename=' + parse.quote(file_name)
   return response
 
 
