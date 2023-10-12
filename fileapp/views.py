@@ -94,6 +94,8 @@ def genCode():
     return code
 
 
+# features for life4cuts
+
 @csrf_exempt
 def api(request):
     if request.method == "POST":
@@ -111,5 +113,40 @@ def api(request):
               'code': code
           }))
 
+    return redirect('/')
+
+
+@csrf_exempt
+def pre_code(request):
+    if request.method == "POST":
+        code = genCode()
+        upload = models.Upload(code=code)
+        upload.save()
+
+        return HttpResponse(json.dumps({
+            'status': 'success',
+            'code': code
+        }))
+    return redirect('/')
+
+
+@csrf_exempt
+def post_file(request):
+    if request.method == "POST":
+        code = request.POST['code']
+        file = request.FILES["file"]
+        upload = models.Upload.objects.filter(code=int(code)).first()
+        if upload is None:
+            return HttpResponse(json.dumps({
+                'status': 'error',
+                'message': 'Invalid code'
+            }))
+          
+        fileupload = models.FileUpload(upload_id=upload, file=file)
+        fileupload.save()
+        
+        return HttpResponse(json.dumps({
+            'status': 'success'
+        }))
     return redirect('/')
 
