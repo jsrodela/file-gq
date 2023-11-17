@@ -33,6 +33,18 @@
 만약 poetry 쓰기 힘들다면, pip으로 아래 라이브러리만 설치해주자
 * django
 
+참고로 `SECRET_KEY` 환경변수가 설정되어 있어야 동작한다.
+```
+export SECRET_KEY="###"
+```
+gunicorn.service 설정할때는 환경변수를 다음과 같이 설정해준다.
+```
+...
+[Service]
+Environment="SECRET_KEY=###"
+...
+```
+
 nginx 설정할때 media는 [이 링크](https://stackoverflow.com/questions/9054354/how-to-force-file-download-in-the-browser-nginx-server) 참고해서 force download되도록 해두기 (참고로 아이폰에서 다운로드가 잘 안되는데, 문제가 뭔지 모르겠어서 찾으면 좋을듯)
 
 ## 수정 기록
