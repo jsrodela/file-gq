@@ -29,6 +29,12 @@
 2. rodela / qwer1234 로그인
 3. fileapp/admin.py에서 설정한 항목 다룰 수 있음
 
+## Requirements
+만약 poetry 쓰기 힘들다면, pip으로 아래 라이브러리만 설치해주자
+* django
+
+nginx 설정할때 media는 [이 링크](https://stackoverflow.com/questions/9054354/how-to-force-file-download-in-the-browser-nginx-server) 참고해서 force download되도록 해두기 (참고로 아이폰에서 다운로드가 잘 안되는데, 문제가 뭔지 모르겠어서 찾으면 좋을듯)
+
 ## 수정 기록
 
 5/14
