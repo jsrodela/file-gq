@@ -39,10 +39,22 @@ export SECRET_KEY="###"
 ```
 gunicorn.service 설정할때는 환경변수를 다음과 같이 설정해준다.
 ```
-...
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
 [Service]
-Environment="SECRET_KEY=###"
-...
+User=rodela
+Group=rodela
+Environment="SECRET_KEY=RODELA_SECRET"
+WorkingDirectory=/home/rodela/file-gq
+ExecStart=/home/rodela/file-gq/.venv/bin/gunicorn \
+    --bind unix:/run/gunicorn.sock \
+    main.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 nginx 설정할때 media는 [이 링크](https://stackoverflow.com/questions/9054354/how-to-force-file-download-in-the-browser-nginx-server) 참고해서 force download되도록 해두기 (참고로 아이폰에서 다운로드가 잘 안되는데, 문제가 뭔지 모르겠어서 찾으면 좋을듯)
