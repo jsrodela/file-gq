@@ -28,7 +28,10 @@ python -m venv .venv
 . .venv/bin/activate
 
 # 의존 모듈 설치
-pip install -r requirements.txt
+pip install django
+
+# 환경변수 설정
+export SECRET_KEY="시크릿 키 입력"
 ```
 
 4. 장고 설정
@@ -132,9 +135,9 @@ sudo nano /etc/nginx/sites-available/main.conf
 ```
 server {
   listen 80;
-  server_name jamsin.ga;
+  server_name jamsin-file.kro.kr;
   charset utf-8;
-  client_max_body_size 128M;
+  client_max_body_size 1G;
 
   location /media {
     alias /home/rodela/file-gq/media;
@@ -153,6 +156,11 @@ server {
     proxy_pass http://unix:/run/gunicorn.sock;
     proxy_buffering off;
   }
+}
+
+server {
+  server_name jamsin.kro.kr;
+  return 301 https://jamsin-file.kro.kr$request_uri;
 }
 ```
 
