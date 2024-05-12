@@ -94,7 +94,6 @@ def genCode():
     return code
 
 
-'''
 # features for life4cuts
 
 @csrf_exempt
@@ -150,5 +149,3 @@ def post_file(request):
             'status': 'success'
         }))
     return redirect('/')
-
-'''
