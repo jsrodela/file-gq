@@ -36,10 +36,18 @@
 만약 poetry 쓰기 힘들다면, pip으로 아래 라이브러리만 설치해주자
 * django
 
-참고로 `SECRET_KEY` 환경변수가 설정되어 있어야 동작한다.
+참고로 `SECRET_KEY` 가 설정되어 있어야 동작한다.
+```shell
+nano settings.json
+
+# 아래 내용 입력
+{
+    "SECRET_KEY": "무작위 키" # 실제 서버 운영 시 유출 금지!!
+}
+
+# 컨트롤+V 후 엔터 누르고 나오기
 ```
-export SECRET_KEY="###"
-```
+
 gunicorn.service 설정할때는 환경변수를 다음과 같이 설정해준다.
 ```
 [Unit]
@@ -113,3 +121,6 @@ nginx 설정할때 media는 [이 링크](https://stackoverflow.com/questions/905
 
 24/2/7
 - 배포 가이드 추가, 설정파일 URL 업데이트 / 윤지욱
+
+24/5/13
+- settings.json 분리, 인생네컷 지원 분기 / 윤지욱

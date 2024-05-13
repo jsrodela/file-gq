@@ -30,8 +30,16 @@ python -m venv .venv
 # 의존 모듈 설치
 pip install django
 
-# 환경변수 설정
-export SECRET_KEY="시크릿 키 입력"
+# 비밀키 설정
+```shell
+nano settings.json
+
+# 아래 내용 입력
+{
+    "SECRET_KEY": "무작위 키" # 실제 서버 운영 시 유출 금지!!
+}
+
+# 컨트롤+V 후 엔터 누르고 나오기
 ```
 
 4. 장고 설정
