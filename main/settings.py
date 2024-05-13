@@ -11,27 +11,36 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os, json
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+settings_file = os.path.join(BASE_DIR, 'settings.json')
+
+with open(settings_file) as f:
+    settings = json.loads(f.read())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-# 비밀키는 ~/.bashrc 에 환경변수로 등록하기
-# export SECRET_KEY='비밀키'
+def get_secret(setting, secrets=settings):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = "Set the secret key on settings.json"
+        raise ImproperlyConfigured(error_msg)
 
-if SECRET_KEY is None:
-  print("Please setup a SECRET_KEY in the Secrets (Environment variables) tab. See README.md for more.")
-  exit(1)
+SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['file-gq-1.rodela6.repl.co', 'jamsin-file.kro.kr', 
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['file-gq-1.rodela6.repl.co', 'jamsin-file.kro.kr', 
                  'jamsin.kro.kr', 'file.jamsin.kr']
 X_FRAME_OPTIONS = '*'
 CSRF_TRUSTED_ORIGINS = ['https://file-gq-1.rodela6.repl.co', 'https://jamsin-file.kro.kr', 

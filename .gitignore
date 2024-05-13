@@ -8,3 +8,4 @@ media
 ./static
 .DS_Store
 .venv
+settings.json
