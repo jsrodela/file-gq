@@ -26,12 +26,7 @@
 - `/send` : 보내기
 - `/send_result` : 보내기 결과, 보낸 후 QR코드랑 숫자 표시하는 페이지
 - `/receive` : 받기
-
-## 데이터베이스 확인 방법 (admin)
-1. https://daon-kiosk--rodela6.repl.co/admin 접속
-2. rodela / qwer1234 로그인
-3. fileapp/admin.py에서 설정한 항목 다룰 수 있음
-
+  
 ## Requirements
 만약 poetry 쓰기 힘들다면, pip으로 아래 라이브러리만 설치해주자
 * django
